@@ -1,30 +1,38 @@
 <script>
-	export let name;
+	import Header from  "./components/Header.svelte";
+	import Footer from  "./components/Footer.svelte";
+	import Form from  "./components/Form.svelte";
+	import CitiesList from  "./components/CitiesList.svelte";
+
 </script>
 
+<Header />
+
 <main>
-	<h1>Hello {name}!</h1>
-	<p>Visit the <a href="https://svelte.dev/tutorial">Svelte tutorial</a> to learn how to build Svelte apps.</p>
+	<Form />
+	<CitiesList />
 </main>
+
+<Footer />
 
 <style>
 	main {
-		text-align: center;
-		padding: 1em;
-		max-width: 240px;
-		margin: 0 auto;
+		max-width: 960px;
+		margin: 40px auto;
+		padding: 20px;
+		height: 400px;
+		overflow: scroll;
 	}
 
-	h1 {
-		color: #ff3e00;
-		text-transform: uppercase;
-		font-size: 4em;
-		font-weight: 100;
-	}
+	@media (min-width: 300px) and (max-width: 599px) {
+        main {
+            height: 450px;
+        }
+    }
 
-	@media (min-width: 640px) {
-		main {
-			max-width: none;
-		}
-	}
+	@media (max-width: 600px) {
+        main {
+            height: 800px;
+        }
+    }
 </style>
